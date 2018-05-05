@@ -1,6 +1,6 @@
 
 Ansible role for Git client:
-https://galaxy.ansible.com/uvsmtid/git-client-ansible-role/
+https://galaxy.ansible.com/uvsmtid/git-client/
 
 ## Description ##
 
@@ -31,7 +31,7 @@ git_client_config:
         -   git-client.yaml
     tasks:
         -   import_role:
-                name: uvsmtid.git-client-ansible-role
+                name: uvsmtid.git-client
 ```
 
 ## License ##

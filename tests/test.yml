@@ -4,4 +4,4 @@
 -   hosts: localhost
     remote_user: root
     roles:
-        -   uvsmtid.git-client-ansible-role
+        -   uvsmtid.git-client
