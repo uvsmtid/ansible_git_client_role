@@ -1,0 +1,18 @@
+# Custom Git configuration for author
+
+#{#
+#   If `set_author_git_config` is false, author config will not be set.
+#   This will force users to set name and email consciously and manually.
+#}#
+{% if set_author_git_config %}
+[user]
+
+    name = {{ git_client_config.git_name }}
+    email = {{ git_client_config.git_email }}
+
+{% endif %}
+
+###############################################################################
+# EOF
+###############################################################################
+

@@ -6,21 +6,16 @@
 
     sparseCheckout = true
 
+[include]
+{% if is_system_wide_configuration %}
+    path = gitconfig.author
+{% else %}
+    path = .gitconfig.author
+{% endif %}
+
 [color]
 
     ui = auto
-
-#{#
-#   Do not configure users system-wide.
-#   This will force other users to set name and email consciously.
-#}#
-{% if set_author_git_config %}
-[user]
-
-    name = {{ git_client_config.git_name }}
-    email = {{ git_client_config.git_email }}
-
-{% endif %}
 
 [diff]
 

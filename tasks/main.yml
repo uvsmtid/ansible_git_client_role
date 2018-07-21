@@ -9,15 +9,25 @@
         state: present
     become: yes
 
--   name: configure_git_for_primary_user
+-   name: configure_git_for_regular_user
     template:
         src: gitconfig
         dest: ~/.gitconfig
         mode: 0644
     vars:
-        set_author_git_config: True
+        is_system_wide_configuration: False
 
--   name: configure_git_for_system
+-   name: configure_git_author_for_regular_user
+    when:
+        -   set_author_git_config | default(false) | bool == true
+    template:
+        src: gitconfig.author
+        dest: ~/.gitconfig.author
+        mode: 0644
+    vars:
+        is_system_wide_configuration: False
+
+-   name: configure_git_for_entire_system
     when:
         -   is_regular_user_only | default(true) | bool == false
     template:
@@ -28,7 +38,21 @@
         group: root
     become: yes
     vars:
-        set_author_git_config: True
+        is_system_wide_configuration: True
+
+-   name: configure_git_author_for_entire_system
+    when:
+        -   is_regular_user_only | default(true) | bool == false
+        -   set_author_git_config | default(false) | bool == true
+    template:
+        src: gitconfig.author
+        dest: /etc/gitconfig.author
+        mode: 0644
+        owner: root
+        group: root
+    become: yes
+    vars:
+        is_system_wide_configuration: True
 
 ###############################################################################
 # EOF
