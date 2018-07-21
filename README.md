@@ -4,11 +4,15 @@ https://galaxy.ansible.com/uvsmtid/git-client/
 
 ## Description ##
 
-Role configures Git client system-wide.
+Role configures Git client.
 
 When `set_author_git_config` variable set to `True`,
 in addition to aliases and other git settings,
 author name and email is configured.
+
+When `is_regular_user_only` variable set to `True`,
+system-wide configuration (which require elevated permissions)
+is **not** applied and package installation is not performed.
 
 ## Requirements ##
 

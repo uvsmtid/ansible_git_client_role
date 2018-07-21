@@ -2,6 +2,8 @@
 ---
 
 -   name: install_git
+    when:
+        -   is_regular_user_only | default(true) | bool == false
     dnf:
         name: git
         state: present
@@ -16,6 +18,8 @@
         set_author_git_config: True
 
 -   name: configure_git_for_system
+    when:
+        -   is_regular_user_only | default(true) | bool == false
     template:
         src: gitconfig
         dest: /etc/gitconfig
