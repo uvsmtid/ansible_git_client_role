@@ -13,7 +13,7 @@
         dest: ~/.gitconfig
         mode: 0644
     vars:
-        is_primary_user_git_config: True
+        set_author_git_config: True
 
 -   name: configure_git_for_system
     template:
@@ -24,7 +24,7 @@
         group: root
     become: yes
     vars:
-        is_primary_user_git_config: True
+        set_author_git_config: True
 
 ###############################################################################
 # EOF

@@ -6,6 +6,10 @@ https://galaxy.ansible.com/uvsmtid/git-client/
 
 Role configures Git client system-wide.
 
+When `set_author_git_config` variable set to `True`,
+in addition to aliases and other git settings,
+author name and email is configured.
+
 ## Requirements ##
 
 Supported platform:
@@ -13,7 +17,7 @@ Fedora 20+
 
 ## Role Variables ##
 
-Override name and email:
+Override author name and email (e.g. in `git-client.yaml`):
 
 ```
 git_client_config:
@@ -22,6 +26,8 @@ git_client_config:
 ```
 
 ## Example Playbook ##
+
+Playbook using `git-client.yaml`:
 
 ```
 ---

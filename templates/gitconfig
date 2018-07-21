@@ -14,7 +14,7 @@
 #   Do not configure users system-wide.
 #   This will force other users to set name and email consciously.
 #}#
-{% if is_primary_user_git_config %}
+{% if set_author_git_config %}
 [user]
 
     name = {{ git_client_config.git_name }}
