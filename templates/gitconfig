@@ -41,7 +41,7 @@
 
     # "Long log" - one line commit with graph.
     # Useful for high level log overview long back in history.
-    llog = log --histogram --decorate=full --graph --pretty=oneline --abbrev-commit
+    llog = log --histogram --decorate=full --graph --pretty=oneline --abbrev-commit --format='%C(auto)%h%d %s %Cgreen%an %Cblue%ad'
 
     # "Branch log" - two line commit with graph of all references.
     # It is used for overview of branching - orphans are visually seen
