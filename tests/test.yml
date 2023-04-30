@@ -4,4 +4,4 @@
 -   hosts: localhost
     remote_user: root
     roles:
-        -   uvsmtid.git-client
+        -   uvsmtid.git_client_role

@@ -41,7 +41,7 @@ Playbook using `git-client.yaml`:
         -   git-client.yaml
     tasks:
         -   import_role:
-                name: uvsmtid.git-client
+                name: uvsmtid.git_client_role
 ```
 
 ## License ##
