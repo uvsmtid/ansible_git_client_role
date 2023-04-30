@@ -1,5 +1,7 @@
 
 galaxy_info:
+    role_name: git_client_role
+
     author: Alexey Pakseykin
     description: Ansible role for Git client
 
