@@ -1,6 +1,6 @@
 
 Ansible role for Git client:
-https://galaxy.ansible.com/uvsmtid/git-client/
+https://galaxy.ansible.com/uvsmtid/git_client_role/
 
 ## Description ##
 
@@ -21,7 +21,7 @@ Fedora 20+
 
 ## Role Variables ##
 
-Override author name and email (e.g. in `git-client.yaml`):
+Override author name and email (e.g. in `git_client_role.yaml`):
 
 ```
 git_client_config:
@@ -31,14 +31,14 @@ git_client_config:
 
 ## Example Playbook ##
 
-Playbook using `git-client.yaml`:
+Playbook using `git_client_role.yaml`:
 
 ```
 ---
 
 -   hosts: all
     vars_files:
-        -   git-client.yaml
+        -   git_client_role.yaml
     tasks:
         -   import_role:
                 name: uvsmtid.git_client_role
